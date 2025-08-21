@@ -1,0 +1,79 @@
+/* Reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+html,body { height: 100%; color: #222; background: #f7f7f7; }
+
+/* Contenedor central */
+.contenedor { width: 90%; max-width: 1100px; margin: 0 auto; padding: 2rem 0; }
+
+/* Header */
+.site-header { background: #1b6b86; color: white; position: sticky; top: 0; z-index: 50; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; }
+.logo h1 { font-size: 1.25rem; margin-bottom: .1rem; }
+.logo .tagline { font-size: .8rem; opacity: .9; }
+
+/* Navegación */
+.nav .menu { list-style: none; display: flex; gap: 1rem; }
+.nav .menu a { color: white; text-decoration: none; padding: .4rem .6rem; border-radius: 6px; transition: background .15s; }
+.nav .menu a:hover { background: rgba(255,255,255,0.08); }
+
+/* Botón menú móvil */
+.menu-toggle { display: none; background: transparent; color: white; border: none; font-size: 1.3rem; cursor: pointer; }
+
+/* Hero */
+.hero { background: linear-gradient(180deg, #eaf6fb 0%, #fff 70%); padding: 2rem 0; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center; }
+.hero-text h2 { font-size: 2rem; margin-bottom: .5rem; }
+.cta { display: inline-block; margin-top: .8rem; padding: .6rem 1rem; background: #1b6b86; color: white; text-decoration: none; border-radius: 6px; }
+
+/* Imagen principal */
+.hero-img img { width: 100%; height: auto; border-radius: 10px; }
+
+/* Productos */
+.seccion { padding: 2rem 0; background: white; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(10,10,10,.03); }
+.productos .intro { margin-bottom: 1rem; color: #666; }
+
+/* Cards */
+.grid-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1rem; }
+.card { background: #fff; padding: 1rem; border-radius: 8px; text-align: left; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+.card img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: .6rem; }
+.precio { font-weight: 700; margin-top: .6rem; }
+
+/* Tabla y listas */
+table { width: 100%; border-collapse: collapse; margin-top: .8rem; }
+table th, table td { border: 1px solid #e1e1e1; padding: .6rem; text-align: left; }
+.lista { margin: .6rem 0 1rem 1.25rem; }
+
+/* Servicios */
+.servicios-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1rem; }
+.servicio { background: #fafafa; padding: 1rem; border-radius: 8px; }
+
+/* Formulario */
+.form-contact { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: .8rem; }
+.form-contact label { grid-column: span 2; font-weight: 600; font-size: .9rem; }
+.form-contact input, .form-contact textarea { padding: .6rem; border: 1px solid #ddd; border-radius: 6px; }
+.form-contact button { grid-column: span 2; padding: .7rem; background: #1b6b86; color: white; border: none; border-radius: 6px; cursor: pointer; }
+
+/* Contact info */
+.contact-info { margin-top: 1rem; }
+
+/* Footer */
+.site-footer { padding: 1rem 0; text-align: center; margin-top: 1rem; color: #555; }
+
+/* Responsive: móviles */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .grid-cards { grid-template-columns: repeat(2,1fr); }
+  .servicios-grid { grid-template-columns: repeat(2,1fr); }
+  .form-contact { grid-template-columns: 1fr; }
+}
+
+/* Responsive: muy pequeño */
+@media (max-width: 600px) {
+  .nav .menu { display: none; flex-direction: column; gap: 0; }
+  .nav.open .menu { display: flex; }
+  .menu-toggle { display: block; }
+  .grid-cards { grid-template-columns: 1fr; }
+  .servicios-grid { grid-template-columns: 1fr; }
+  .logo h1 { font-size: 1rem; }
+  .hero-text h2 { font-size: 1.4rem; }
+}
